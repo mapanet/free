@@ -1,0 +1,126 @@
+# Mapanet table definition
+# MySQL version
+#
+# (C) 2022 Mapanet
+
+# Drop old tables if needed
+
+# DROP TABLE IF EXISTS Admin;
+# DROP TABLE IF EXISTS Postal_Codes;
+# DROP TABLE IF EXISTS Streets;
+
+# Table REGIONS
+ 
+CREATE TABLE Admin_Regions (<br />
+    ISO VARCHAR(2) NOT NULL,<br />
+    Country NVARCHAR(45) NOT NULL,<br />
+    Language VARCHAR(2) NOT NULL,<br />
+    Level INT NOT NULL,<br />
+    Category NVARCHAR(45) NOT NULL,<br />
+    CategoryEN NVARCHAR(45) NOT NULL,<br />
+    Region1Code VARCHAR(10) NOT NULL,<br />
+    Region2Code VARCHAR(10),<br />
+    Region3Code VARCHAR(10),<br />
+    Region4Code VARCHAR(10),<br />
+    Region NVARCHAR(85) NOT NULL,<br />
+    Latitude decimal(10, 6),<br />
+    Longitude decimal(10, 6),<br />
+    Elevation Int,<br />
+    ISO2 VARCHAR(10),<br />
+    FIPS VARCHAR(10),<br />
+    NUTS VARCHAR(30),<br />
+    HASC VARCHAR(12),<br />
+    STAT VARCHAR(20),<br />
+    CONSTRAINT PK_Admin_Regions PRIMARY KEY CLUSTERED <br />
+    (<br />
+    ISO ASC,<br />
+    Language ASC,<br />
+    Region1Code ASC,<br />
+    Region2Code ASC,<br />
+    Region3Code ASC,<br />
+    Region4Code ASC<br />
+    ) ON [PRIMARY]<br />
+    );<br />
+
+# Import
+
+BULK INSERT Admin_Regions FROM 'Path\Geo-XX-4-XXX.DAT' WITH (FIRSTROW = 2, FIELDTERMINATOR = ';', DATAFILETYPE = 'widechar')
+
+<br /><br />
+
+# Table POSTAL CODES
+ 
+CREATE TABLE Postal_Codes (<br>
+  ISO character varying(2) NOT NULL,<br>
+  Country character varying(45) NOT NULL,<br />
+  Language character varying(2) NOT NULL,<br>
+  ID bigint(20) NOT NULL,<br>
+  PostalCode character varying(10),<br>
+  Region1 character varying(85),<br>
+  Region2 character varying(85),<br>
+  Region3 character varying(85),<br>
+  Region4 character varying(85),<br>
+  Locality character varying(110),<br>
+  Suburb character varying(110),<br>
+  Latitude decimal(10, 6),<br>
+  Longitude decimal(10, 6),<br>
+  Elevation integer,<br>
+  TimeZone character varying(35),<br>
+  UTC character varying(6),<br>
+  DST character varying(6),<br>
+  PRIMARY KEY (ISO, Language, ID) <br />
+  )<br />
+  ENGINE=MyISAM DEFAULT charSET=utf8;
+
+# Table STREETS
+ 
+CREATE TABLE Streets (<br>
+  ISO character varying(2) NOT NULL,<br>
+  Country character varying(45) NOT NULL,<br>
+  Language character varying(2) NOT NULL,<br>
+  ID bigint(20) NOT NULL,<br>
+  PostalCode character varying(10),<br>
+  Region1 character varying(85),<br>
+  Region2 character varying(85),<br>
+  Region3 character varying(85),<br>
+  Region4 character varying(85),<br>
+  Locality character varying(110),<br>
+  Suburb character varying(110),<br>
+  Street character varying(110),<br>
+  NumType character varying(10),<br>
+  NumLow character varying(10),<br>
+  NumHigh character varying(10),<br>
+  OddEven character varying(1),<br>
+  Enum character varying(50),<br>
+  Building character varying(85),<br>
+  IntType character varying(15),<br>
+  IntLow character varying(10),<br>
+  IntHigh character varying(10),<br>
+  IntOddEven character varying(1),<br>
+  Latitude decimal(10, 6),<br>
+  Longitude decimal(10, 6),<br>
+  Elevation integer,<br>
+  TimeZone character varying(35),<br>
+  UTC character varying(6),<br>
+  DST character varying(6),<br>
+  PRIMARY KEY (ISO, Language, ID)<br>
+  )<br />
+  ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+# Table POLYGONS OF POSTAL CODES
+ 
+CREATE TABLE Boundaries (<br />
+  ISO character varying(2) NOT NULL,<br />
+  Layer integer NOT NULL,<br />
+  Code varchar(12) NOT NULL,<br />
+  Name nvarchar(85) NOT NULL,<br />
+  Geometry geometry NOT NULL,<br />
+  PRIMARY KEY (ISO, Layer, Code) <br />
+  )<br />
+  ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+© 2022 GitHub, Inc.
+Terms
+Privacy
+S
