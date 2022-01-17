@@ -1,5 +1,5 @@
 # Terms and conditions of use
-These Terms and Conditions of Use (the “Terms of Use”) apply to the Mapanet Limited website located at www.mapanet.eu, and all associated sites linked to www.mapanet.eu by Mapanet Ltd (collectively, the “Website”). The Website is the property of Mapanet Limited ("Mapanet"). Please read these Terms of Use carefully before using data and/or services from Mapanet. These Terms of Use govern your use of the website. These Terms of Use apply to all visitors, users, buyers, sellers and others who access the data and Services (as defined below).
+These Terms and Conditions of Use (the “Terms of Use”) apply to the Mapanet Limited website located at www.mapanet.eu, and all associated sites linked to www.mapanet.eu by Divex Turimos, S.L. (collectively, the “Website”). The Website is the property of Mapanet Limited ("Mapanet"). Please read these Terms of Use carefully before using data and/or services from Mapanet. These Terms of Use govern your use of the website. These Terms of Use apply to all visitors, users, buyers, sellers and others who access the data and Services (as defined below).
 
 By visiting the Website or using the data and/or services in any manner, you agree that you have read and agree to be bound by and a party to the Terms of Use to the exclusion of all other terms. If you do not unconditionally agree to all the terms of Use, you have no right to use the website, data or services. Access to the Website and use of Mapanet's data and services is expressly conditioned upon your assent to all the terms of Use, to the exclusion of all other terms.
 #### Services
@@ -64,7 +64,7 @@ This Agreement and all matters arising from it are governed by and construed in 
 These Terms of Use constitute the entire agreement between you and Mapanet with regard to your use of the Website, and any and all other written or oral agreements or understandings previously existing between you and Mapanet with respect to such use are hereby superseded and cancelled.
 
 ## Privacy policy
-This privacy notice discloses the privacy practices for the www.mapanet.eu website. Mapanet Ltd respects the privacy of its users and clients, it abides by all laws governing the protection of privacy and individual rights. Mapanet Ltd will never disclose to any third-party any information provided by the client. Such information is confidential and only used for purposes related to the ongoing transaction. Mapanet reserves the right to send its clients updates on any changes to its services or promotional offers by email.
+This privacy notice discloses the privacy practices for the www.mapanet.eu website. Divex Turimos, S.L. respects the privacy of its users and clients, it abides by all laws governing the protection of privacy and individual rights. Divex Turimos, S.L. will never disclose to any third-party any information provided by the client. Such information is confidential and only used for purposes related to the ongoing transaction. Mapanet reserves the right to send its clients updates on any changes to its services or promotional offers by email.
 #### Information collection, use and sharing
 We are the sole owners of the information collected on this Website. We do not collect, store, or share any personally identifiable user data, except what you voluntarily give to us via email or other direct contact from you. We will not sell or rent this information to anyone.
 
@@ -74,4 +74,4 @@ We collect account information such as name, telephone and address solely for bi
 #### Cookies
 We use cookies and log file information to store information so you will not have to re-enter it during your visit or in subsequent visits, to maintain sessions for authenticated users and to monitor aggregate metrics such as total number of visitors and pages viewed.
 
-Rev. 1.7 May. 2021 © Divex Turismo, S.L.
+Rev. 2.57 Kan. 2022 © Divex Turismo, S.L.
