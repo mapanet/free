@@ -1,5 +1,5 @@
 ## Table definitions
-Mapanet table definitions and import scripts.
+Mapanet table definitions
 
 <br>
 #### Regions table
