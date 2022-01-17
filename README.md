@@ -36,7 +36,7 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="250">Field name</th><th width="200">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
+  <tr><th width="15%">Field name</th><th width="15%">Field type</th><th width="70%">Description</th><th width="20">Key</th></tr>
 </thead>
 <tbody>
   <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
@@ -64,7 +64,7 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="250">Field name</th><th width="200">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
+  <tr><th width="15%">Field name</th><th width="15%">Field type</th><th width="70%">Description</th><th width="20">Key</th></tr>
 </thead>
 <tbody>
   <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
@@ -103,7 +103,7 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="250">Field name</th><th width="200">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
+  <tr><th width="15%">Field name</th><th width="15%">Field type</th><th width="70%">Description</th><th width="20">Key</th></tr>
 </thead>
 <tbody>
   <tr><th class="left">Field</th><th class="left">Data type</th class="left"><th class="left">Description</th><th class="left">&nbsp;</th class="left"></tr>
