@@ -93,11 +93,7 @@ CREATE TABLE Streets (
   Region4 nvarchar(85),
   Locality nvarchar(110),
   Suburb nvarchar(110),
-  <!--StreetPrefix nvarchar(20),-->
-  <!--StreetPrep nvarchar(15),-->
   Street nvarchar(110),
-  <!--StreetSuffix nvarchar(20),-->
-  <!--StreetDir nvarchar(15),-->
   NumType varchar(10),
   NumLow varchar(10),
   NumHigh nvarchar(10),
