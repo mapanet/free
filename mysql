@@ -107,3 +107,4 @@ CREATE TABLE Boundaries (<br />
   PRIMARY KEY (ISO, Layer, Code) <br />
   )<br />
   ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
