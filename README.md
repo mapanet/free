@@ -19,7 +19,7 @@ Mapanet table definitions
   <tr><td>Region2Code</td><td>varchar(10)</td><td>Administrative level 2 code</td><td>PK</td></tr>
   <tr><td>Region3Code</td><td>varchar(10)</td><td>Administrative level 3 code</td><td>PK</td></tr>
   <tr><td>Region4Code</td><td>varchar(10)</td><td>Administrative level 4 code</td><td>PK</td></tr>
-  <tr><td>Region</td><td>nvarchar(85)</td><td>Administrative region name</td><td>PK</td></tr>
+  <tr><td>Region</td><td>nvarchar(85)</td><td>Administrative region name</td><td></td></tr>
   <tr><td>Latitude</td><td>Decimal(10,6)</td><td>EPSG:4326 (WGS84)</td><td>&nbsp;</td></tr>
   <tr><td>Longitude</td><td>Decimal(10,6)</td><td>EPSG:4326 (WGS84)</td><td>&nbsp;</td></tr>
   <tr><td>Elevation</td><td>Integer</td><td>Elevation in meters (average)</td><td>&nbsp;</td></tr>
