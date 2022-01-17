@@ -1,5 +1,5 @@
 ## Table definitions
-GeoPostcodes table definitions and import scripts.
+Mapanet table definitions and import scripts.
 
 <br>
 #### Regions table
