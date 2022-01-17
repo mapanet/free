@@ -28,7 +28,7 @@ Mapanet table definitions and import scripts.
 </table>
 
 <br>
-#### Places table
+#### Postal Codes
 
 <table class="table table-bordered table-striped">
 <thead>
@@ -65,7 +65,7 @@ Mapanet table definitions and import scripts.
 </table>
 
 <br>
-#### Streets table (Street+)
+#### Streets table
 
 <table class="table table-bordered table-striped">
 <thead>
