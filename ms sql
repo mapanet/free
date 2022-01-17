@@ -13,126 +13,126 @@
 
 # Table REGIONS
  
-CREATE TABLE Admin_Regions (<br />
-  ISO VARCHAR(2) NOT NULL,<br />
-  Country NVARCHAR(45) NOT NULL,<br />
-  Language VARCHAR(2) NOT NULL,<br />
-  Level INT NOT NULL,<br />
-  Category NVARCHAR(45) NOT NULL,<br />
-  CategoryEN NVARCHAR(45) NOT NULL,<br />
-  Region1Code VARCHAR(10) NOT NULL,<br />
-  Region2Code VARCHAR(10),<br />
-  Region3Code VARCHAR(10),<br />
-  Region4Code VARCHAR(10),<br />
-  Region NVARCHAR(85) NOT NULL,<br />
-  Latitude decimal(10, 6),<br />
-  Longitude decimal(10, 6),<br />
-  Elevation Int,<br />
-  ISO2 VARCHAR(10),<br />
-  FIPS VARCHAR(10),<br />
-  NUTS VARCHAR(30),<br />
-  HASC VARCHAR(12),<br />
-  STAT VARCHAR(20),<br />
-  CONSTRAINT PK_Admin_Regions PRIMARY KEY CLUSTERED <br />
-  (<br />
-  ISO ASC,<br />
-  Language ASC,<br />
-  Region1Code ASC,<br />
-  Region2Code ASC,<br />
-  Region3Code ASC,<br />
-  Region4Code ASC<br />
-  ) ON [PRIMARY]<br />
-  );<br />
+CREATE TABLE Admin_Regions (
+  ISO VARCHAR(2) NOT NULL,
+  Country NVARCHAR(45) NOT NULL,
+  Language VARCHAR(2) NOT NULL,
+  Level INT NOT NULL,
+  Category NVARCHAR(45) NOT NULL,
+  CategoryEN NVARCHAR(45) NOT NULL,
+  Region1Code VARCHAR(10) NOT NULL,
+  Region2Code VARCHAR(10),
+  Region3Code VARCHAR(10),
+  Region4Code VARCHAR(10),
+  Region NVARCHAR(85) NOT NULL,
+  Latitude decimal(10, 6),
+  Longitude decimal(10, 6),
+  Elevation Int,
+  ISO2 VARCHAR(10),
+  FIPS VARCHAR(10),
+  NUTS VARCHAR(30),
+  HASC VARCHAR(12),
+  STAT VARCHAR(20),
+  CONSTRAINT PK_Admin_Regions PRIMARY KEY CLUSTERED 
+  (
+  ISO ASC,
+  Language ASC,
+  Region1Code ASC,
+  Region2Code ASC,
+  Region3Code ASC,
+  Region4Code ASC
+  ) ON [PRIMARY]
+  );
 
 # Import
 
 BULK INSERT Admin_Regions FROM 'Path\Geo-XX-4-XXX.DAT' WITH (FIRSTROW = 2, FIELDTERMINATOR = ';', DATAFILETYPE = 'widechar')
 
-<br /><br />
+
 
 # Table POSTAL CODES
  
-CREATE TABLE Postal_Codes (<br>
-  ISO varchar(2) NOT NULL,<br>
-  Country nvarchar(45) NOT NULL,<br>
-  Language varchar(2) NOT NULL,<br>
-  ID bigint NOT NULL,<br>
-  PostalCode varchar(10),<br>
-  Region1 nvarchar(85),<br>
-  Region2 nvarchar(85),<br>
-  Region3 nvarchar(85),<br>
-  Region4 nvarchar(85),<br>
-  Locality nvarchar(110),<br>
-  Suburb nvarchar(110),<br>
-  Latitude decimal(10,6),<br>
-  Longitude decimal(10,6),<br>
-  Elevation Int,<br>
-  TimeZone varchar(35),<br>
-  UTC varchar(6),<br>
-  DST varchar(6),<br>
-  CONSTRAINT PK_Postal_Codes PRIMARY KEY CLUSTERED (ISO ASC, Language ASC, ID ASC) ON [PRIMARY]<br>
-  );<br>
+CREATE TABLE Postal_Codes (
+  ISO varchar(2) NOT NULL,
+  Country nvarchar(45) NOT NULL,
+  Language varchar(2) NOT NULL,
+  ID bigint NOT NULL,
+  PostalCode varchar(10),
+  Region1 nvarchar(85),
+  Region2 nvarchar(85),
+  Region3 nvarchar(85),
+  Region4 nvarchar(85),
+  Locality nvarchar(110),
+  Suburb nvarchar(110),
+  Latitude decimal(10,6),
+  Longitude decimal(10,6),
+  Elevation Int,
+  TimeZone varchar(35),
+  UTC varchar(6),
+  DST varchar(6),
+  CONSTRAINT PK_Postal_Codes PRIMARY KEY CLUSTERED (ISO ASC, Language ASC, ID ASC) ON [PRIMARY]
+  );
 
 # Import
 
 BULK INSERT Postal_Codes FROM 'Path\Geo-XX-5-XXX.DAT' WITH (FIRSTROW = 2,FIELDTERMINATOR = ';', DATAFILETYPE = 'widechar')
 
-<br><br>
+
 
 # Table STREETS
  
-CREATE TABLE Streets (<br>
-  ISO varchar(2) NOT NULL,<br>
-  Country nvarchar(45) NOT NULL,<br>
-  Language varchar(2) NOT NULL,<br>
-  ID bigint NOT NULL,<br>
-  PostalCode varchar(10),<br>
-  Region1 nvarchar(85),<br>
-  Region2 nvarchar(85),<br>
-  Region3 nvarchar(85),<br>
-  Region4 nvarchar(85),<br>
-  Locality nvarchar(110),<br>
-  Suburb nvarchar(110),<br>
-  <!--StreetPrefix nvarchar(20),<br>-->
-  <!--StreetPrep nvarchar(15),<br>-->
-  Street nvarchar(110),<br>
-  <!--StreetSuffix nvarchar(20),<br>-->
-  <!--StreetDir nvarchar(15),<br>-->
-  NumType varchar(10),<br>
-  NumLow varchar(10),<br>
-  NumHigh nvarchar(10),<br>
-  OddEven varchar(1),<br>
-  Enum varchar(30),<br>
-  Building nvarchar(85),<br>
-  IntType nvarchar(15),<br>
-  IntLow varchar(10),<br>
-  IntHigh varchar(10),<br>
-  IntOddEven varchar(1),<br>
-  Latitude decimal(10,6),<br>
-  Longitude decimal(10,6),<br>
-  Elevation Int,<br>
-  TimeZone varchar(35),<br>
-  UTC varchar(6),<br>
-  DST varchar(6),<br>
-  CONSTRAINT PK_Streets PRIMARY KEY CLUSTERED (ISO ASC, Language ASC, ID ASC) ON [PRIMARY]<br>
-  );<br>
+CREATE TABLE Streets (
+  ISO varchar(2) NOT NULL,
+  Country nvarchar(45) NOT NULL,
+  Language varchar(2) NOT NULL,
+  ID bigint NOT NULL,
+  PostalCode varchar(10),
+  Region1 nvarchar(85),
+  Region2 nvarchar(85),
+  Region3 nvarchar(85),
+  Region4 nvarchar(85),
+  Locality nvarchar(110),
+  Suburb nvarchar(110),
+  <!--StreetPrefix nvarchar(20),-->
+  <!--StreetPrep nvarchar(15),-->
+  Street nvarchar(110),
+  <!--StreetSuffix nvarchar(20),-->
+  <!--StreetDir nvarchar(15),-->
+  NumType varchar(10),
+  NumLow varchar(10),
+  NumHigh nvarchar(10),
+  OddEven varchar(1),
+  Enum varchar(30),
+  Building nvarchar(85),
+  IntType nvarchar(15),
+  IntLow varchar(10),
+  IntHigh varchar(10),
+  IntOddEven varchar(1),
+  Latitude decimal(10,6),
+  Longitude decimal(10,6),
+  Elevation Int,
+  TimeZone varchar(35),
+  UTC varchar(6),
+  DST varchar(6),
+  CONSTRAINT PK_Streets PRIMARY KEY CLUSTERED (ISO ASC, Language ASC, ID ASC) ON [PRIMARY]
+  );
 
 # Import
 
-BULK INSERT Streets FROM 'Path\Geo-XX-8-XXX.DAT' WITH (FIRSTROW = 2, FIELDTERMINATOR = ';', DATAFILETYPE = 'widechar')<br>
+BULK INSERT Streets FROM 'Path\Geo-XX-8-XXX.DAT' WITH (FIRSTROW = 2, FIELDTERMINATOR = ';', DATAFILETYPE = 'widechar')
 
-<br><br>
+
 
 # Table POLYGONS OF POSTAL CODES
  
-CREATE TABLE Boundaries (<br />
-						ISO varchar(2) NOT NULL,<br />
-						Layer int NOT NULL,<br />
-						Code varchar(12) NOT NULL,<br />
-						Name nvarchar(85) NOT NULL,<br />
-						Geometry geography NOT NULL,<br />
-					CONSTRAINT PK_Boundaries PRIMARY KEY CLUSTERED (ISO ASC, Layer ASC, Code ASC) ON [PRIMARY]<br />
-					);
+CREATE TABLE Boundaries (
+ISO varchar(2) NOT NULL,
+Layer int NOT NULL,
+Code varchar(12) NOT NULL,
+Name nvarchar(85) NOT NULL,
+Geometry geography NOT NULL,
+CONSTRAINT PK_Boundaries PRIMARY KEY CLUSTERED (ISO ASC, Layer ASC, Code ASC) ON [PRIMARY]
+);
 
 # Import
 
