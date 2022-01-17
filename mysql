@@ -1,108 +1,109 @@
-# GeoPostcodes table definition
+# Mapanet table definition
 # MySQL version
 #
-# (C) 2016 GeoData Ltd
+# (C) 2022 Mapanet
 
 # Drop old tables if needed
 
-# DROP TABLE IF EXISTS GeoPC_Places;
-# DROP TABLE IF EXISTS GeoPC_Streets;
-# DROP TABLE IF EXISTS GeoPC_Business;
-# DROP TABLE IF EXISTS GeoPC_Regions;
+# DROP TABLE IF EXISTS Admin;
+# DROP TABLE IF EXISTS Postal_Codes;
+# DROP TABLE IF EXISTS Streets;
 
 # Table REGIONS
  
-CREATE TABLE GeoPC_Regions (
-  ISO varchar(2) NOT NULL,
-  Country varchar(50) NOT NULL,
-  Language varchar(2) NOT NULL,
-  Level smallint(8) NOT NULL,
-  Type varchar(50) NOT NULL,
-  Name varchar(80) NOT NULL,
-  Region1 varchar(80),
-  Region2 varchar(80),
-  Region3 varchar(80),
-  Region4 varchar(80),
-  ISO2 varchar(10),
-  FIPS varchar(10),
-  NUTS varchar(12),
-  HASC varchar(12),
-  STAT varchar(20)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE Admin (<br />
+   ISO character varying(2) NOT NULL,<br />
+   Country character varying(45) NOT NULL,<br />
+   Language character varying(2) NOT NULL,<br />
+   Level integer NOT NULL,<br />
+   Category character varying(45) NOT NULL,<br />
+   CategoryEN character varying(45) NOT NULL,<br />
+   Region1Code character varying(10) NOT NULL,<br />
+   Region2Code character varying(10),<br />
+   Region3Code character varying(10),<br />
+   Region4Code character varying(10),<br />
+   Region character varying(85) NOT NULL,<br />
+   Latitude decimal(10, 6),<br />
+   Longitude decimal(10, 6),<br />
+   Elevation integer,<br />
+   ISO2 character varying(10),<br />
+   FIPS character varying(10),<br />
+   NUTS character varying(12),<br />
+   HASC character varying(12),<br />
+   STAT character varying(20),<br />
+  PRIMARY KEY (ISO, Language, Region1Code, Region2Code, Region3Code, Region4Code)<br />
+  )<br />
+  ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-# Table PLACES
+
+# Table POSTAL CODES
  
-CREATE TABLE GeoPC_Places (
-  ISO varchar(2) NOT NULL,
-  Country varchar(50) NOT NULL,
-  Language varchar(2) NOT NULL,
-  ID bigint(20) NOT NULL,
-  Region1 varchar(80),
-  Region2 varchar(80),
-  Region3 varchar(80),
-  Region4 varchar(80),
-  Locality varchar(80),
-  Postcode varchar(15),
-  Suburb varchar(80),
-  Latitude double,
-  Longitude double,
-  Elevation integer,
-  ISO2 varchar(10),
-  FIPS varchar(10),
-  NUTS varchar(12),
-  HASC varchar(12),
-  STAT varchar(20),
-  Timezone varchar(30),
-  UTC varchar(10),
-  DST varchar(10),
-  PRIMARY KEY (Language, ID)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE Postal_Codes (<br>
+  ISO character varying(2) NOT NULL,<br>
+  Country character varying(45) NOT NULL,<br />
+  Language character varying(2) NOT NULL,<br>
+  ID bigint(20) NOT NULL,<br>
+  PostalCode character varying(10),<br>
+  Region1 character varying(85),<br>
+  Region2 character varying(85),<br>
+  Region3 character varying(85),<br>
+  Region4 character varying(85),<br>
+  Locality character varying(110),<br>
+  Suburb character varying(110),<br>
+  Latitude decimal(10, 6),<br>
+  Longitude decimal(10, 6),<br>
+  Elevation integer,<br>
+  TimeZone character varying(35),<br>
+  UTC character varying(6),<br>
+  DST character varying(6),<br>
+  PRIMARY KEY (ISO, Language, ID) <br />
+  )<br />
+  ENGINE=MyISAM DEFAULT charSET=utf8;
 
 # Table STREETS
  
-CREATE TABLE GeoPC_Streets (
-  ISO varchar(2) NOT NULL,
-  Country varchar(50) NOT NULL,
-  Language varchar(2) NOT NULL,
-  ID bigint(20) NOT NULL,
-  Region1 varchar(80),
-  Region2 varchar(80),
-  Region3 varchar(80),
-  Region4 varchar(80),
-  Locality varchar(80),
-  Postcode varchar(15),
-  Suburb varchar(80),
-  Street varchar(100),
-  `Range` varchar(50),
-  Building varchar(80),
-  Latitude double,
-  Longitude double,
-  Elevation integer,
-  ISO2 varchar(10),
-  FIPS varchar(10),
-  NUTS varchar(12),
-  HASC varchar(12),
-  STAT varchar(20),
-  Timezone varchar(30),
-  UTC varchar(10),
-  DST varchar(10),
-  PRIMARY KEY (Language, ID)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE Streets (<br>
+  ISO character varying(2) NOT NULL,<br>
+  Country character varying(45) NOT NULL,<br>
+  Language character varying(2) NOT NULL,<br>
+  ID bigint(20) NOT NULL,<br>
+  PostalCode character varying(10),<br>
+  Region1 character varying(85),<br>
+  Region2 character varying(85),<br>
+  Region3 character varying(85),<br>
+  Region4 character varying(85),<br>
+  Locality character varying(110),<br>
+  Suburb character varying(110),<br>
+  Street character varying(110),<br>
+  NumType character varying(10),<br>
+  NumLow character varying(10),<br>
+  NumHigh character varying(10),<br>
+  OddEven character varying(1),<br>
+  Enum character varying(50),<br>
+  Building character varying(85),<br>
+  IntType character varying(15),<br>
+  IntLow character varying(10),<br>
+  IntHigh character varying(10),<br>
+  IntOddEven character varying(1),<br>
+  Latitude decimal(10, 6),<br>
+  Longitude decimal(10, 6),<br>
+  Elevation integer,<br>
+  TimeZone character varying(35),<br>
+  UTC character varying(6),<br>
+  DST character varying(6),<br>
+  PRIMARY KEY (ISO, Language, ID)<br>
+  )<br />
+  ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-# Table BUSINESS
+
+# Table POLYGONS OF POSTAL CODES
  
-CREATE TABLE GeoPC_Business (
-  ISO varchar(2) NOT NULL,
-  Country varchar(50) NOT NULL,
-  Language varchar(2) NOT NULL,
-  ID bigint(20) NOT NULL,
-  Region1 varchar(80),
-  Region2 varchar(80),
-  Region3 varchar(80),
-  Region4 varchar(80),
-  Entity varchar(100),
-  Postcode varchar(15),
-  Info varchar(100),
-  PRIMARY KEY (Language, ID)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
+CREATE TABLE Boundaries (<br />
+  ISO character varying(2) NOT NULL,<br />
+  Layer integer NOT NULL,<br />
+  Code varchar(12) NOT NULL,<br />
+  Name nvarchar(85) NOT NULL,<br />
+  Geometry geometry NOT NULL,<br />
+  PRIMARY KEY (ISO, Layer, Code) <br />
+  )<br />
+  ENGINE=MyISAM DEFAULT CHARSET=utf8;
