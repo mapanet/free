@@ -6,7 +6,7 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="200">Field name</th><th width="150">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
+  <tr><th width="250">Field name</th><th width="200">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
 </thead>
 <tbody>
   <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
@@ -36,7 +36,7 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="200">Field name</th><th width="150">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
+  <tr><th width="250">Field name</th><th width="200">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
 </thead>
 <tbody>
   <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
@@ -64,7 +64,7 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="200">Field name</th><th width="150">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
+  <tr><th width="250">Field name</th><th width="200">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
 </thead>
 <tbody>
   <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
@@ -98,3 +98,19 @@ Mapanet table definitions and import scripts.
 </tbody>
 </table>
 
+<br>
+#### Boundaries/Polygons of postal codes table
+
+<table class="table table-bordered table-striped">
+<thead>
+  <tr><th width="250">Field name</th><th width="200">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
+</thead>
+<tbody>
+  <tr><th class="left">Field</th><th class="left">Data type</th class="left"><th class="left">Description</th><th class="left">&nbsp;</th class="left"></tr>
+  <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
+  <tr><td>Layer</td><td>int</td><td>Layer (7)</td><td>PK</td></tr>
+  <tr><td>Code</td><td>varchar(12)</td><td>Postal code</td><td>PK</td></tr>
+  <tr><td>Name</td><td>nvarchar(85)</td><td>Name: "Postal code: 33129"</td><td>&nbsp;</td></tr>
+  <tr><td>Geometry</td><td>geography</td><td>POINT(Lon,Lat)&nbsp; POLYGON((Lon,Lat))&nbsp; MULTIPOLYGON(((Lon,Lat)))</td><td>&nbsp;</td></tr>				
+  </tbody>
+</table>
