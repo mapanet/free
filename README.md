@@ -6,7 +6,7 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="150">Field name</th><th width="120">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
+  <tr><th width="200">Field name</th><th width="150">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
 </thead>
 <tbody>
   <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
@@ -36,7 +36,7 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="150">Field name</th><th width="120">Field type</th><th>Description</th><th width="20">Key</th></tr>
+  <tr><th width="200">Field name</th><th width="150">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
 </thead>
 <tbody>
   <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
@@ -64,7 +64,7 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="150">Field name</th><th width="120">Field type</th><th>Description</th><th width="20">Key</th></tr>
+  <tr><th width="200">Field name</th><th width="150">Field type</th><th width="80%">Description</th><th width="20">Key</th></tr>
 </thead>
 <tbody>
   <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
