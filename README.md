@@ -94,7 +94,7 @@ Mapanet table definitions and import scripts.
   <tr><td>Elevation</td><td>Integer</td><td>Elevation in meters</td><td>&nbsp;</td></tr>
   <tr><td>Timezone</td><td>varchar(35)</td><td>Time zone name (Olson)</td><td>&nbsp;</td></tr>
   <tr><td>UTC</td><td>varchar(6)</td><td>Coordinated Universal Time</td><td>&nbsp;</td></tr>
-  <tr><td>DST</td><td>varchar(6)</td><td>Daylight saving time</td><td>&nbsp;1</td></tr>
+  <tr><td>DST</td><td>varchar(6)</td><td>Daylight saving time</td><td>&nbsp;</td></tr>
 </tbody>
 </table>
 
