@@ -49,11 +49,6 @@ Mapanet table definitions and import scripts.
   <tr><td><b>Latitude</b></td><td><code>Double</code></td><td>Place latitude (WGS84 coordinates)</td></tr>
   <tr><td><b>Longitude</b></td><td><code>Double</code></td><td>Place longitude (WGS84 coordinates)</td></tr>
   <tr><td><b>Elevation</b></td><td><code>Integer</code></td><td>Elevation in meters</td></tr>
-  <tr><td><b>ISO2</b></td><td><code>Char(10)</code></td><td>ISO 3166-2 Region code</td></tr>
-  <tr><td><b>FIPS</b></td><td><code>Char(10)</code></td><td>NGA Geopolitical code (formerly FIPS PUB 10-4)</td></tr>
-  <tr><td><b>NUTS</b></td><td><code>Char(12)</code></td><td>European statistical division code</td></tr>
-  <tr><td><b>HASC</b></td><td><code>Char(12)</code></td><td>Hierarchical administrative subdivision code</td></tr>
-  <tr><td><b>STAT</b></td><td><code>Char(20)</code></td><td>National statistics/census code</td></tr>
   <tr><td><b>Timezone</b></td><td><code>Char(30)</code></td><td>Time zone name (Olson)</td></tr>
   <tr><td><b>UTC</b></td><td><code>Char(10)</code></td><td>Coordinated Universal Time</td></tr>
   <tr><td><b>DST</b></td><td><code>Char(10)</code></td><td>Daylight saving time</td></tr>
@@ -89,11 +84,6 @@ Mapanet table definitions and import scripts.
   <tr><td><b>Latitude</b></td><td><code>Double</code></td><td>Street latitude (WGS84 coordinates)</td></tr>
   <tr><td><b>Longitude</b></td><td><code>Double</code></td><td>Street longitude (WGS84 coordinates)</td></tr>
   <tr><td><b>Elevation</b></td><td><code>Integer</code></td><td>Elevation in meters</td></tr>
-  <tr><td><b>ISO2</b></td><td><code>Char(10)</code></td><td>ISO 3166-2 Region code</td></tr>
-  <tr><td><b>FIPS</b></td><td><code>Char(10)</code></td><td>NGA Geopolitical code (formerly FIPS PUB 10-4)</td></tr>
-  <tr><td><b>NUTS</b></td><td><code>Char(12)</code></td><td>European statistical division code</td></tr>
-  <tr><td><b>HASC</b></td><td><code>Char(12)</code></td><td>Hierarchical administrative subdivision code</td></tr>
-  <tr><td><b>STAT</b></td><td><code>Char(20)</code></td><td>National statistics/census code</td></tr>
   <tr><td><b>Timezone</b></td><td><code>Char(30)</code></td><td>Time zone name (Olson)</td></tr>
   <tr><td><b>UTC</b></td><td><code>Char(10)</code></td><td>Coordinated Universal Time</td></tr>
   <tr><td><b>DST</b></td><td><code>Char(10)</code></td><td>Daylight saving time</td></tr>
