@@ -6,24 +6,28 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="150">Field name</th><th width="120">Field type</th><th>Description</th></tr>
+  <tr><th width="150">Field name</th><th width="120">Field type</th><th>Description</th><th>Key</th></tr>
 </thead>
 <tbody>
-  <tr><td><b>ISO</b></td><td><code>Char(2)</code></td><td>ISO 3166-1 Country code</td></tr>
-  <tr><td><b>Country</b></td><td><code>Char(50)</code></td><td>Country name</td></tr>
-  <tr><td><b>Language</b></td><td><code>Char(2)</code></td><td>Language code</td></tr>
-  <tr><td><b>Level</b></td><td><code>Integer</code></td><td>Administrative level</td></tr>
-  <tr><td><b>Type</b></td><td><code>Char(50)</code></td><td>Type of administrative unit</td></tr>
-  <tr><td><b>Name</b></td><td><code>Char(80)</code></td><td>Administrative division name</td></tr>
-  <tr><td><b>Region1</b></td><td><code>Char(80)</code></td><td>Administrative division level 1</td></tr>
-  <tr><td><b>Region2</b></td><td><code>Char(80)</code></td><td>Administrative division level 2</td></tr>
-  <tr><td><b>Region3</b></td><td><code>Char(80)</code></td><td>Administrative division level 3</td></tr>
-  <tr><td><b>Region4</b></td><td><code>Char(80)</code></td><td>Administrative division level 4</td></tr>
-  <tr><td><b>ISO2</b></td><td><code>Char(10)</code></td><td>ISO 3166-2 Region code</td></tr>
-  <tr><td><b>FIPS</b></td><td><code>Char(10)</code></td><td>NGA Geopolitical code (formerly FIPS PUB 10-4)</td></tr>
-  <tr><td><b>NUTS</b></td><td><code>Char(10)</code></td><td>European statistical division code</td></tr>
-  <tr><td><b>HASC</b></td><td><code>Char(10)</code></td><td>Hierarchical administrative subdivision code</td></tr>
-  <tr><td><b>STAT</b></td><td><code>Char(20)</code></td><td>National statistics/census code</td></tr>
+  <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
+  <tr><td>Country</td><td>nvarchar(45)</td><td>Country name</td><td>&nbsp;</td></tr>
+  <tr><td>Language</td><td>varchar(2)</td><td>Language code</td><td>PK</td></tr>
+  <tr><td>Level</td><td>int</td><td>Administrative level</td><td></td>PK</tr>
+  <tr><td>Category</td><td>nvarchar(45)</td><td>Type of administrative division</td><td>&nbsp;</td></tr>
+  <tr><td>CategoryEN</td><td>nvarchar(45)</td><td>Type in English</td><td>&nbsp;</td></tr>
+  <tr><td>Region1Code</td><td>varchar(10)</td><td>Administrative level 1 code</td><td>PK</td></tr>
+  <tr><td>Region2Code</td><td>varchar(10)</td><td>Administrative level 2 code</td><td>PK</td></tr>
+  <tr><td>Region3Code</td><td>varchar(10)</td><td>Administrative level 3 code</td><td>PK</td></tr>
+  <tr><td>Region4Code</td><td>varchar(10)</td><td>Administrative level 4 code</td><td>PK</td></tr>
+  <tr><td>Region</td><td>nvarchar(85)</td><td>Administrative region name</td><td>PK</td></tr>
+  <tr><td>Latitude</td><td>Decimal(10,6)</td><td>EPSG:4326 (WGS84)</td><td>&nbsp;</td></tr>
+  <tr><td>Longitude</td><td>Decimal(10,6)</td><td>EPSG:4326 (WGS84)</td><td>&nbsp;</td></tr>
+  <tr><td>Elevation</td><td>Integer</td><td>Elevation in meters (average)</td><td>&nbsp;</td></tr>
+  <tr><td>ISO2</td><td>varchar(10)</td><td>ISO code</td><td>&nbsp;</td></tr>
+  <tr><td>FIPS</td><td>varchar(10)</td><td>American code</td><td>&nbsp;</td></tr>
+  <tr><td>NUTS</td><td>varchar(12)</td><td>European Union area code</td><td>&nbsp;</td></tr>
+  <tr><td>HASC</td><td>varchar(12)</td><td>Statoids code</td><td>&nbsp;</td></tr>
+  <tr><td>STAT</td><td>varchar(20)</td><td>Statistics code - organization of country</td><td>&nbsp;</td></tr>
 </tbody>
 </table>
 
@@ -32,30 +36,26 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="150">Field name</th><th width="120">Field type</th><th>Description</th></tr>
+  <tr><th width="150">Field name</th><th width="120">Field type</th><th>Description</th><th>Key</th></tr>
 </thead>
 <tbody>
-  <tr><td><b>ISO</b></td><td><code>Char(2)</code></td><td>ISO 3166-1 Country code</td></tr>
-  <tr><td><b>Country</b></td><td><code>Char(50)</code></td><td>Country name</td></tr>
-  <tr><td><b><u>Language</u></b></td><td><code>Char(2)</code></td><td>Language code</td></tr>
-  <tr><td><b><u>ID</u></b></td><td><code>Integer</code></td><td>Record identifier</td>
-  </tr><tr><td><b>Region1</b></td><td><code>Char(80)</code></td><td>Administrative division level 1</td></tr>
-  <tr><td><b>Region2</b></td><td><code>Char(80)</code></td><td>Administrative division level 2</td></tr>
-  <tr><td><b>Region3</b></td><td><code>Char(80)</code></td><td>Administrative division level 3</td></tr>
-  <tr><td><b>Region4</b></td><td><code>Char(80)</code></td><td>Administrative division level 4</td></tr>
-  <tr><td><b>Locality</b></td><td><code>Char(80)</code></td><td>Locality name</td></tr>
-  <tr><td><b>Postcode</b></td><td><code>Char(15)</code></td><td>ZIP / Postal code</td></tr>
-  <tr><td><b>Suburb</b></td><td><code>Char(80)</code></td><td>Locality subdivision</td></tr>
-  <tr><td><b>Latitude</b></td><td><code>Double</code></td><td>Place latitude (WGS84 coordinates)</td></tr>
-  <tr><td><b>Longitude</b></td><td><code>Double</code></td><td>Place longitude (WGS84 coordinates)</td></tr>
-  <tr><td><b>Elevation</b></td><td><code>Integer</code></td><td>Elevation in meters</td></tr>
-  <tr><td><b>Timezone</b></td><td><code>Char(30)</code></td><td>Time zone name (Olson)</td></tr>
-  <tr><td><b>UTC</b></td><td><code>Char(10)</code></td><td>Coordinated Universal Time</td></tr>
-  <tr><td><b>DST</b></td><td><code>Char(10)</code></td><td>Daylight saving time</td></tr>
-  <tr><td><b>Area</b></td><td><code>Char(10)</code></td><td>Telephone area code</td></tr>
-  <tr><td><b>Type</b></td><td><code>Char(1)</code></td><td>Record type (D = Delivery place, B = Business/Admin, M = Military)</td></tr>
-  <tr><td><b>Entity</b></td><td><code>Char(100)</code></td><td>Entity description (business or administrative records)</td></tr>
-  <tr><td><b>Primary</b></td><td><code>Char(1)</code></td><td>P = Primary place when a same postcode can be used for multiple records</td></tr>
+  <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
+  <tr><td>Country</td><td>nvarchar(45)</td><td>Country name</td><td>&nbsp;</td></tr>
+  <tr><td>Language</td><td>varchar(2)</td><td>Language code</td><td>PK</td></tr>
+  <tr><td>ID</td><td>bigint</td><td>Record ID</td><td>PK</td></tr>
+  <tr><td>PostalCode</td><td>varchar(10)</td><td>Postal code</td><td>&nbsp;</td></tr>
+  <tr><td>Region1</td><td>nvarchar(85)</td><td>Administrative level 1 name</td><td>&nbsp;</td></tr>				
+  <tr><td>Region2</td><td>nvarchar(85)</td><td>Administrative level 2 name</td><td>&nbsp;</td></tr>				
+  <tr><td>Region3</td><td>nvarchar(85)</td><td>Administrative level 3 name</td><td>&nbsp;</td></tr>				
+  <tr><td>Region4</td><td>nvarchar(85)</td><td>Administrative level 4 name</td><td>&nbsp;</td></tr>
+  <tr><td>Locality</td><td>nvarchar(110)</td><td>Locality name</td><td>&nbsp;</td></tr>
+  <tr><td>Suburb</td><td>nvarchar(110)</td><td>Suburb name</td><td>&nbsp;</td></tr>
+  <tr><td>Latitude</td><td>Decimal(10,6)</td><td>EPSG:4326 (WGS84)</td><td>&nbsp;</td></tr>
+  <tr><td>Longitude</td><td>Decimal(10,6)</td><td>EPSG:4326 (WGS84)</td><td>&nbsp;</td></tr>
+  <tr><td>Elevation</td><td>Integer</td><td>Elevation in meters (average)</td><td>&nbsp;</td></tr>
+  <tr><td>Timezone</td><td>varchar(35)</td><td>Time zone name (Olson)</td><td>&nbsp;</td></tr>
+  <tr><td>UTC</td><td>varchar(6)</td><td>Coordinated Universal Time</td><td>&nbsp;</td></tr>
+  <tr><td>DST</td><td>varchar(6)</td><td>Daylight saving time</td><td>&nbsp;</td></tr>
 </tbody>
 </table>
 
@@ -64,31 +64,38 @@ Mapanet table definitions and import scripts.
 
 <table class="table table-bordered table-striped">
 <thead>
-  <tr><th width="150">Field name</th><th width="120">Field type</th><th>Description</th></tr>
+  <tr><th width="150">Field name</th><th width="120">Field type</th><th>Description</th><th>Key/th></tr>
 </thead>
 <tbody>
-  <tr><td><b>ISO</b></td><td><code>Char(2)</code></td><td>ISO 3166-1 Country code</td></tr>
-  <tr><td><b>Country</b></td><td><code>Char(50)</code></td><td>Country name</td></tr>
-  <tr><td><b><u>Language</u></b></td><td><code>Char(2)</code></td><td>Language code</td></tr>
-  <tr><td><b><u>ID</u></b></td><td><code>Integer</code></td><td>Record identifier</td></tr>
-  <tr><td><b>Region1</b></td><td><code>Char(80)</code></td><td>Administrative division level 1</td></tr>
-  <tr><td><b>Region2</b></td><td><code>Char(80)</code></td><td>Administrative division level 2</td></tr>
-  <tr><td><b>Region3</b></td><td><code>Char(80)</code></td><td>Administrative division level 3</td></tr>
-  <tr><td><b>Region4</b></td><td><code>Char(80)</code></td><td>Administrative division level 4</td></tr>
-  <tr><td><b>Locality</b></td><td><code>Char(80)</code></td><td>Locality name</td></tr>
-  <tr><td><b>Postcode</b></td><td><code>Char(15)</code></td><td>ZIP / Postal code</td></tr>
-  <tr><td><b>Suburb</b></td><td><code>Char(80)</code></td><td>Locality subdivision</td></tr>
-  <tr><td><b>Street</b></td><td><code>Char(100)</code></td><td>Street name</td></tr>
-  <tr><td><b>Range</b></td><td><code>Char(50)</code></td><td>Street numbers range</td></tr>
-  <tr><td><b>Building</b></td><td><code>Char(80)</code></td><td>Building name</td></tr>
-  <tr><td><b>Latitude</b></td><td><code>Double</code></td><td>Street latitude (WGS84 coordinates)</td></tr>
-  <tr><td><b>Longitude</b></td><td><code>Double</code></td><td>Street longitude (WGS84 coordinates)</td></tr>
-  <tr><td><b>Elevation</b></td><td><code>Integer</code></td><td>Elevation in meters</td></tr>
-  <tr><td><b>Timezone</b></td><td><code>Char(30)</code></td><td>Time zone name (Olson)</td></tr>
-  <tr><td><b>UTC</b></td><td><code>Char(10)</code></td><td>Coordinated Universal Time</td></tr>
-  <tr><td><b>DST</b></td><td><code>Char(10)</code></td><td>Daylight saving time</td></tr>
-  <tr><td><b>Area</b></td><td><code>Char(10)</code></td><td>Telephone area code</td></tr>
-  <tr><td><b>Type</b></td><td><code>Char(1)</code></td><td>Record type (D = Delivery place, B = Business/Admin, M = Military)</td></tr><tr><td><b>Entity</b></td><td><code>Char(100)</code></td><td>Entity description (business or administrative records)</td></tr>
+  <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
+  <tr><td>Country</td><td>nvarchar(45)</td><td>Country name</td><td>&nbsp;</td></tr>
+  <tr><td>Language</td><td>varchar(2)</td><td>Language code</td><td>PK</td></tr>
+  <tr><td>ID</td><td>bigint</td><td>Record ID</td><td>PK</td></tr>
+  <tr><td>PostalCode</td><td>varchar(10)</td><td>Postal code</td><td>&nbsp;</td></tr>
+  <tr><td>Region1</td><td>nvarchar(45)</td><td>Administrative level 1 name</td><td>&nbsp;</td></tr>				
+  <tr><td>Region2</td><td>nvarchar(45)</td><td>Administrative level 2 name</td><td>&nbsp;</td></tr>				
+  <tr><td>Region3</td><td>nvarchar(45)</td><td>Administrative level 3 name</td><td>&nbsp;</td></tr>				
+  <tr><td>Region4</td><td>nvarchar(85)</td><td>Administrative level 4 name</td><td>&nbsp;</td></tr>
+  <tr><td>Locality</td><td>nvarchar(110)</td><td>Locality name</td><td>&nbsp;</td></tr>
+  <tr><td>Suburb</td><td>nvarchar(110)</td><td>Suburb name</td><td>&nbsp;</td></tr>
+  <tr><td>Street</td><td>nvarchar(110)</td><td>Name</td><td>&nbsp;</td></tr>
+  <tr><td>NumType</td><td>varchar(10)</td><td>Segment designation other than number: porta, door...</td><td>&nbsp;</td></tr>
+  <tr><td>NumLow</td><td>varchar(10)</td><td>Street Lower number</td><td>&nbsp;</td></tr>
+  <tr><td>NumHigh</td><td>varchar(10)</td><td>Street Upper number</td><td>&nbsp;</td></tr>
+  <tr><td>OddEven</td><td>varchar(1)</td><td>Street side: B=both E=even O=odd N=None</td><td>&nbsp;</td></tr>
+  <tr><td>Enum</td><td>varchar(30)</td><td>Enumeration when other than number</td><td>&nbsp;</td></tr>
+  <tr><td>Building</td><td>nvarchar(110)</td><td>Building name</td><td>&nbsp;</td></tr>
+  <tr><td>IntType</td><td>varchar(15)</td><td>Interior (Apartment, Suite, etc.) * US and Canada only</td><td>&nbsp;</td></tr>
+  <tr><td>IntLow</td><td>varchar(10)</td><td>Interior lower number * US and Canada only</td><td>&nbsp;</td></tr>
+  <tr><td>IntHigh</td><td>varchar(10)</td><td>Interior upper number * US and Canada only</td><td>&nbsp;</td></tr>
+  <tr><td>IntOddEven</td><td>varchar(1)</td><td>Interior range: B=both E=even O=odd N=None * US and Canada only</td><td>&nbsp;</td></tr>
+  <tr><td>Latitude</td><td>Decimal(10, 6)</td><td>EPSG:4326 (WGS84)</td><td>&nbsp;</td></tr>
+  <tr><td>Longitude</td><td>Decimal(10, 6)</td><td>EPSG:4326 (WGS84)</td><td>&nbsp;</td></tr>
+  <tr><td>Elevation</td><td>Integer</td><td>Elevation in meters</td><td>&nbsp;</td></tr>
+  <tr><td>Timezone</td><td>varchar(35)</td><td>Time zone name (Olson)</td><td>&nbsp;</td></tr>
+  <tr><td>UTC</td><td>varchar(6)</td><td>Coordinated Universal Time</td><td>&nbsp;</td></tr>
+  <tr><td>DST</td><td>varchar(6)</td><td>Daylight saving time</td><td>&nbsp;</td></tr>
+
 </tbody>
 </table>
 
