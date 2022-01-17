@@ -12,7 +12,7 @@ Mapanet table definitions
   <tr><td>ISO</td><td>varchar(2)</td><td>Country code ISO 3166-1</td><td>PK</td></tr>
   <tr><td>Country</td><td>nvarchar(45)</td><td>Country name</td><td>&nbsp;</td></tr>
   <tr><td>Language</td><td>varchar(2)</td><td>Language code</td><td>PK</td></tr>
-  <tr><td>Level</td><td>int</td><td>Administrative level</td><td><td>PK</td></tr>
+  <tr><td>Level</td><td>int</td><td>Administrative level</td><td>PK</td></tr>
   <tr><td>Category</td><td>nvarchar(45)</td><td>Type of administrative division</td><td>&nbsp;</td></tr>
   <tr><td>CategoryEN</td><td>nvarchar(45)</td><td>Type in English</td><td>&nbsp;</td></tr>
   <tr><td>Region1Code</td><td>varchar(10)</td><td>Administrative level 1 code</td><td>PK</td></tr>
